@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('./dist/mq135-frontend'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/mq135-frontend/'}),
+    res.sendFile('home.component.html', {root: 'dist/mq135-frontend/'}),
 );
 
 // Start the app by listening on the default Heroku port
