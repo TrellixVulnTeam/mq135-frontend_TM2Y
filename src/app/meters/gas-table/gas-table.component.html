@@ -1,0 +1,30 @@
+<table mat-table [dataSource]="recordsGas" class="mat-elevation-z8 products-table">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let record"> {{record.id_mq135}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="log">
+        <th mat-header-cell *matHeaderCellDef> Registro </th>
+        <td mat-cell *matCellDef="let record"> {{record.data_mq135}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Fecha </th>
+        <td mat-cell *matCellDef="let record"> {{record.date_mq135}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions. </th>
+        <td mat-cell *matCellDef="let record">
+            <button mat-stroked-button color="primary" [routerLink]="['./edit/', record.id]">Editar</button>
+            <button mat-raised-button color="warn" (click)=" deleteRecord(record.id)">Eliminar</button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
