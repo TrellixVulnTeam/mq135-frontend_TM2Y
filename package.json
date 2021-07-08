@@ -3,18 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.1.1",
     "@angular/cdk": "^10.2.7",
+    "@angular/cli": "^12.1.1",
     "@angular/common": "~12.1.1",
     "@angular/compiler": "~12.1.1",
+    "@angular/compiler-cli": "^12.1.1",
     "@angular/core": "~12.1.1",
     "@angular/forms": "~12.1.1",
     "@angular/material": "^10.2.7",
@@ -23,15 +26,16 @@
     "@angular/router": "~12.1.1",
     "chart.js": "^2.9.4",
     "chartjs-plugin-annotation": "^0.5.7",
+    "express": "^4.17.1",
     "ng2-charts": "^2.2.3",
+    "path": "^0.12.7",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "typescript": "~4.3.5",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^12.1.1",
-    "@angular/cli": "^12.1.1",
-    "@angular/compiler-cli": "^12.1.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -45,7 +49,10 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.3.5"
+    "tslint": "~6.1.0"
+  },
+  "engines": {
+    "node": "12.18.2",
+    "npm": "6.14.5"
   }
 }
